@@ -1,0 +1,58 @@
+<div id="main">
+    <p>属性面板</p>
+    <span style="margin: 20px 0px;line-height: 60px;">图标点</span>
+    <p-accordion [multiple]="true" ng-app="change">
+        <p-accordionTab header="通用" [selected]="true"  >
+        <div class="item">
+            <span class="word">类型</span>
+            <span style="align-items: center;width:100px;color: orange;">点</span>
+        </div>
+        <div class="item"  >
+           <span class="word">经度</span>
+           <input type="text"  [(ngModel)]="obj_aloc.latitude" >
+        </div>
+        <div class="item">
+            <span class="word">纬度</span>
+            <input type="text" [(ngModel)]="obj_aloc.longitude">
+         </div>
+         <div class="item">
+            <span class="word">不透明度 </span>
+            <span class="word"> </span>
+            <div id="bfc">
+            <p-slider [(ngModel)]="labelSet.alpha" [min]="0" [max]="100" (ngModelChange)="onSearchChange($event)"></p-slider> 
+            </div>
+         </div>
+         
+        </p-accordionTab>
+        <p-accordionTab header="外观" [selected]="true">
+            <div class="item">
+                <span class="word">尺寸</span>
+                <input type="text" [(ngModel)]="labelSet.pixelSize" (ngModelChange)="onSearchChange($event)">
+             </div>
+             <div class="item">
+                <span class="word">填充</span>
+                <div id="bfc0">
+                <p-checkbox [(ngModel)]="labelSet.val01" [binary]="true"></p-checkbox>
+                <div id="temp"> </div>
+                <p-colorPicker [(ngModel)]="labelSet.color" (ngModelChange)="onSearchChange($event)"></p-colorPicker>
+                
+                </div>
+             </div>
+             <div class="item">
+                <span class="word">描边</span>
+                <div id="bfc0">
+                <p-checkbox [(ngModel)]="labelSet.val02" [binary]="true"></p-checkbox>
+                <div id="temp"> </div>
+                <p-colorPicker [(ngModel)]="labelSet.outlineColor" (ngModelChange)="onSearchChange($event)"></p-colorPicker>
+                </div>
+             </div>
+             <div class="item">
+                <span class="word">描边尺寸</span>
+                <input type="text" style="width: 30%; margin-right:30%;" [(ngModel)]="labelSet.outlineWidth" (ngModelChange)="onSearchChange($event)">
+             </div>
+        </p-accordionTab>
+        
+    </p-accordion>
+    
+    
+</div>
